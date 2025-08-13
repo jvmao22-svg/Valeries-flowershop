@@ -2,11 +2,11 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-roses = ["pink", "red", "white", "orange", "yellow", "green", "blue", "purple"]
-fillers = ["daisies", "delphinium", "bells_of_ireland"]
-others = ["lilies", "tulips", "carnations", "sunflowers"]
-wrappings = ["red", "orange", "yellow", "green", "blue", "purple", "pink"]
-gifts = ["teddybear", "bunny", "chocolate"]
+roses = ["Pink", "Red", "White", "Orange", "Yellow", "Green", "Blue", "Purple"]
+fillers = ["Daisies", "Delphinium", "Bells_of_ireland"]
+others = ["Lilies", "Tulips", "Carnations", "Sunflowers"]
+wrappings = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
+gifts = ["Teddybear", "Bunny", "Chocolate"]
 
 
 @app.route("/", methods=["GET", "POST"])
