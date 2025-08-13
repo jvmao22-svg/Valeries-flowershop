@@ -1,0 +1,53 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Your Bouquet</title>
+    <style>
+        .bouquet-stack {
+            position: relative;
+            width: 300px;
+            height: 400px;
+        }
+
+        .bouquet-stack img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body
+    style="background-image: url('/static/background.gif'); background-size: cover; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
+
+    <div class="bouquet-stack">
+        <img src="/static/{{ selections.wrapping }}_wrap.gif" alt="{{ selections.wrapping }} wrapping">
+        <img src="/static/{{ selections.rose }}_rose.gif" alt="{{ selections.rose }} rose">
+        <img src="/static/{{ selections.filler }}.gif" alt="{{ selections.filler }}">
+        <img src="/static/{{ selections.other }}.gif" alt="{{ selections.other }}">
+        <img src="/static/{{ selections.gift }}.gif" alt="{{ selections.gift }}">
+    </div>
+    <a href="/">
+        <button style="
+            margin-top: 30px;
+            padding: 12px 32px;
+            background-color: #ba68c8;
+            color: #fff;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 20px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(106,27,154,0.15);
+            cursor: pointer;
+            transition: background 0.3s;
+        " onmouseover="this.style.backgroundColor='#6a1b9a'" onmouseout="this.style.backgroundColor='#ba68c8'">
+            🌸 Make Another Bouquet!
+        </button>
+    </a>
+</body>
+
+</html>

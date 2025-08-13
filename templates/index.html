@@ -1,0 +1,98 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flower Bouquet Game</title>
+    <style>
+        select {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 18px;
+            color: #6a1b9a;
+            /* purple */
+            background-color: #ffe4fa;
+            /* light pink */
+            border: 2px solid #6a1b9a;
+            border-radius: 8px;
+            padding: 6px 12px;
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #6a1b9a;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body
+    style="background-image: url('/static/background.gif'); background-size: cover; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
+    <h1
+        style="margin-top: 170px; margin-bottom: 30px; font-family: 'Comic Sans MS', cursive, sans-serif; color: #6a1b9a;">
+        Make Your Flower Bouquet!
+    </h1>
+    <form method="post" style="display: flex; flex-direction: column; align-items: center;">
+        <div style="display: flex; gap: 40px; margin-bottom: 20px;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <label>Rose:</label>
+                <select name="rose">
+                    {% for r in roses %}
+                    <option value="{{ r }}">{{ r }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <label>Filler Flower:</label>
+                <select name="filler">
+                    {% for f in fillers %}
+                    <option value="{{ f }}">{{ f }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div style="display: flex; gap: 40px;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <label>Other Flower:</label>
+                <select name="other">
+                    {% for o in others %}
+                    <option value="{{ o }}">{{ o }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <label>Wrapping Paper:</label>
+                <select name="wrapping">
+                    {% for w in wrappings %}
+                    <option value="{{ w }}">{{ w }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <label>Gift:</label>
+                <select name="gift">
+                    {% for g in gifts %}
+                    <option value="{{ g }}">{{ g }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <button type="submit" style="
+        margin-top: 30px;
+        padding: 12px 32px;
+        background-color: #ba68c8;
+        color: #fff;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        font-size: 20px;
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(106,27,154,0.15);
+        cursor: pointer;
+        transition: background 0.3s;
+    " onmouseover="this.style.backgroundColor='#6a1b9a'" onmouseout="this.style.backgroundColor='#ba68c8'">
+            💐 Make Bouquet!
+        </button>
+    </form>
+</body>
+
+</html>
