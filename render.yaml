@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: Valeries-flowershop
+    env: python
+    buildCommand: ""
+    startCommand: python flowershop.py
+    plan: free
